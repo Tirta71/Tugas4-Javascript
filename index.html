@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Pegawai</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css"
+    />
+  </head>
+  <body>
+    <h1>Data Pegawai</h1>
+    <form id="pegawai-form">
+      <label for="nama">Nama Pegawai:</label>
+      <input type="text" id="nama" name="nama" required /><br /><br />
+      <label for="jabatan">Jabatan:</label>
+      <select id="jabatan" name="jabatan">
+        <option value="Manager">Manager</option>
+        <option value="Asisten Manager">Asisten Manager</option>
+        <option value="Staff">Staff</option></select
+      ><br /><br />
+      <label for="status">Status:</label>
+      <select id="status" name="status">
+        <option value="menikah">Menikah</option>
+        <option value="belum">Belum Menikah</option></select
+      ><br /><br />
+      <button type="submit">Tambah Pegawai</button>
+    </form>
+    <br />
+    <table id="pegawai-table">
+      <thead>
+        <tr>
+          <th>Nama Pegawai</th>
+          <th>Jabatan</th>
+          <th>Status</th>
+          <th>Gaji Pokok</th>
+          <th>Tunjangan Jabatan</th>
+          <th>BPJS</th>
+          <th>Tunjangan Keluarga</th>
+          <th>Total Gaji</th>
+        </tr>
+      </thead>
+      <tbody id="pegawai-data"></tbody>
+      <tfoot id="total-gaji">
+        <tr>
+          <td colspan="7">Total Gaji</td>
+          <td id="total-gaji-amount">0</td>
+        </tr>
+      </tfoot>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
