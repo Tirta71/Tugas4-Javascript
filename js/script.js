@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("pegawai-form");
   const tableBody = document.getElementById("pegawai-data");
+  const table = document.getElementById("pegawai-table"); // Tambahkan ini
   let totalGaji = 0;
 
   form.addEventListener("submit", function (event) {
@@ -19,18 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const row = document.createElement("tr");
     row.dataset.totalGaji = total;
     row.innerHTML = `
-            <td>${nama}</td>
-            <td>${jabatan}</td>
-            <td>${status}</td>
-            <td>${formatCurrency(gajiPokok)}</td>
-            <td>${formatCurrency(tunjanganJabatan)}</td>
-            <td>${formatCurrency(bpjs)}</td>
-            <td>${formatCurrency(tunjanganKeluarga)}</td>
-            <td>${formatCurrency(total)}</td>
-            <td><button class="hapus-pegawai" data-nama="${nama}">Hapus</button></td>
-          `;
+              <td>${nama}</td>
+              <td>${jabatan}</td>
+              <td>${status}</td>
+              <td>${formatCurrency(gajiPokok)}</td>
+              <td>${formatCurrency(tunjanganJabatan)}</td>
+              <td>${formatCurrency(bpjs)}</td>
+              <td>${formatCurrency(tunjanganKeluarga)}</td>
+              <td>${formatCurrency(total)}</td>
+              <td><button class="hapus-pegawai" data-nama="${nama}">Hapus</button></td>
+            `;
     tableBody.appendChild(row);
-
+    table.style.display = "table"; // Tambahkan ini
     totalGaji += total;
     updateTotalGaji();
     form.reset();
